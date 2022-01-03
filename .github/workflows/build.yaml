@@ -1,0 +1,24 @@
+name: Build
+on: [push, pull_request]
+
+jobs:
+  build_on_linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@master
+      with:
+        node-version: 14
+    - name: install flatpak-builder and eu-strip
+      run: |
+        sudo apt-get install flatpak -y
+        sudo apt-get install flatpak-builder -y
+        sudo apt-get install elfutils -y
+        sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+        sudo flatpak install flathub org.freedesktop.Platform//21.08 org.freedesktop.Sdk//21.08 -y
+    - name: install dependencies
+      run: npm install
+    - name: enable debugging
+      run: echo DEBUG=electron-forge:*
+    - name: build
+      run: npm run make
