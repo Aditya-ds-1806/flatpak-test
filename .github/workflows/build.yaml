@@ -20,5 +20,5 @@ jobs:
       run: npm install
     - name: build
       env:
-        DEBUG: @malept/flatpak-bundler
+        DEBUG: @malept/flatpak-bundler:*
       run: npm run make
