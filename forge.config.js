@@ -4,6 +4,7 @@ module.exports = {
         makers: [
             {
                 name: '@electron-forge/maker-flatpak',
+                "platforms": ["linux"],
                 config: {
                     options: {
                         id: 'flatpak_test',
