@@ -28,8 +28,8 @@
           ],
           "config": {
             "options": {
-              "id": "flatpak_test",
-              "productName": "flatpak_test"
+              "id": "org.blah.bblah",
+              "productName": "org.blah.bblah"
             }
           }
         }
