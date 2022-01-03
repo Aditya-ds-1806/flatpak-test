@@ -18,7 +18,23 @@
   },
   "license": "MIT",
   "config": {
-    "forge": "./forge.config.js"
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "electron-forge/maker-flatpak",
+          "platforms": [
+            "linux"
+          ],
+          "config": {
+            "options": {
+              "id": "flatpak_test",
+              "productName": "flatpak_test"
+            }
+          }
+        }
+      ]
+    }
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
