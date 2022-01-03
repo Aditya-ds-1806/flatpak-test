@@ -3,9 +3,14 @@ module.exports = {
         packagerConfig: {},
         makers: [
             {
-                name: "@electron-forge/maker-rpm",
-                config: {}
-            }
+                name: '@electron-forge/maker-flatpak',
+                config: {
+                    options: {
+                        id: 'flatpak_test',
+                        productName: 'flatpak_test',
+                    }
+                }
+            },
         ]
     }
 }
