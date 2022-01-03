@@ -22,7 +22,7 @@
       "packagerConfig": {},
       "makers": [
         {
-          "name": "electron-forge/maker-flatpak",
+          "name": "@electron-forge/maker-flatpak",
           "platforms": [
             "linux"
           ],

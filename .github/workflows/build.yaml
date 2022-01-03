@@ -19,6 +19,6 @@ jobs:
     - name: install dependencies
       run: npm install
     - name: enable debugging
-      run: echo DEBUG=electron-forge:*
+      run: export DEBUG=electron-forge:*
     - name: build
       run: npm run make
